@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Manager - Trips</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true">
+    <div class="blob amber"></div>
+    <div class="blob teal"></div>
+    <div class="blob coral"></div>
+  </div>
+  <header class="topbar">
+    <h1><span class="dot"></span>Fleet Manager</h1>
+    <nav>
+      <a class="tab" href="/index.html">Dashboard</a>
+      <a class="tab" href="/vehicles.html">Vehicles</a>
+      <a class="tab" href="/drivers.html">Drivers</a>
+      <a class="tab active" href="/trips.html">Trips</a>
+      <a class="tab" href="/maintenance.html">Maintenance</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Trips</h2>
+    <form id="trip-form" class="inline-form">
+      <select name="vehicle_id" required></select>
+      <select name="driver_id" required></select>
+      <input name="start_location" placeholder="From" required>
+      <input name="end_location" placeholder="To" required>
+      <input name="start_time" type="datetime-local" required>
+      <input name="distance_km" placeholder="Distance (km)" type="number" step="0.1">
+      <button type="submit">Log Trip</button>
+    </form>
+    <table id="trips-table">
+      <thead><tr><th>Vehicle</th><th>Driver</th><th>Route</th><th>Start</th><th>Status</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script src="/js/shared.js"></script>
+  <script src="/js/trips.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Manager - Vehicles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true">
+    <div class="blob amber"></div>
+    <div class="blob teal"></div>
+    <div class="blob coral"></div>
+  </div>
+  <header class="topbar">
+    <h1><span class="dot"></span>Fleet Manager</h1>
+    <nav>
+      <a class="tab" href="/index.html">Dashboard</a>
+      <a class="tab active" href="/vehicles.html">Vehicles</a>
+      <a class="tab" href="/drivers.html">Drivers</a>
+      <a class="tab" href="/trips.html">Trips</a>
+      <a class="tab" href="/maintenance.html">Maintenance</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Vehicles</h2>
+    <form id="vehicle-form" class="inline-form">
+      <input name="plate_number" placeholder="Plate number" required>
+      <input name="make" placeholder="Make" required>
+      <input name="model" placeholder="Model" required>
+      <input name="year" placeholder="Year" type="number">
+      <select name="fuel_type">
+        <option value="petrol">Petrol</option>
+        <option value="diesel">Diesel</option>
+        <option value="electric">Electric</option>
+        <option value="hybrid">Hybrid</option>
+      </select>
+      <input name="mileage" placeholder="Mileage" type="number">
+      <button type="submit">Add Vehicle</button>
+    </form>
+    <table id="vehicles-table">
+      <thead><tr><th>Plate</th><th>Make/Model</th><th>Year</th><th>Fuel</th><th>Mileage</th><th>Status</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script src="/js/shared.js"></script>
+  <script src="/js/vehicles.js"></script>
+</body>
+</html>
