@@ -9,8 +9,8 @@ const STATUS_COLORS = {
   out_of_service: "#fb7185",
 };
 
-function money(n) {
-  return "$" + Number(n).toLocaleString(undefined, { maximumFractionDigits: 0 });
+  function money(n) {
+  return "R" + Number(n).toLocaleString("en-ZA", { maximumFractionDigits: 0 });
 }
 
 // Draws a donut chart from [{status, count}] into the given <svg>, and
