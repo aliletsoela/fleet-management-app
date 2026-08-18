@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0a0e1a"/>
+  <!-- trailer body -->
+  <rect x="8" y="24" width="30" height="18" rx="2" fill="#ffb020"/>
+  <!-- cab -->
+  <path d="M38 42 L38 28 L48 28 L54 34 L54 42 Z" fill="#ffb020"/>
+  <!-- cab window -->
+  <path d="M41 31 L47 31 L51 35 L41 35 Z" fill="#0a0e1a"/>
+  <!-- headlight -->
+  <circle cx="53" cy="39" r="1.6" fill="#0a0e1a"/>
+  <!-- wheels -->
+  <circle cx="18" cy="44" r="5.5" fill="#0a0e1a" stroke="#2dd4bf" stroke-width="3"/>
+  <circle cx="46" cy="44" r="5.5" fill="#0a0e1a" stroke="#2dd4bf" stroke-width="3"/>
+  <!-- ground/motion line -->
+  <rect x="4" y="50" width="56" height="2.5" rx="1.25" fill="#fb7185" opacity="0.55"/>
+</svg>
