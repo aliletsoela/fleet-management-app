@@ -12,6 +12,7 @@ const driversRouter = require("./routes/drivers");
 const tripsRouter = require("./routes/trips");
 const maintenanceRouter = require("./routes/maintenance");
 const dashboardRouter = require("./routes/dashboard");
+const kpisRouter = require("./routes/kpis");
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use("/api/drivers", driversRouter);
 app.use("/api/trips", tripsRouter);
 app.use("/api/maintenance", maintenanceRouter);
 app.use("/api/dashboard", dashboardRouter);
+app.use("/api/kpis", kpisRouter);
 
 // Simple health check - useful for VibeNest's post-deploy checks
 app.get("/health", (req, res) => res.json({ status: "ok" }));
