@@ -7,7 +7,7 @@ async function loadMaintenance() {
     <tr>
       <td>${m.plate_number}</td>
       <td>${m.service_type}</td>
-      <td>${m.cost ? "R" + m.cost : "-"}</td>
+      <td>${m.cost ? "R" + Number(m.cost).toLocaleString("en-ZA", { maximumFractionDigits: 0 }) : "-"}</td>
       <td>${m.service_date}</td>
       <td>${badge(m.status)}</td>
       <td><button class="icon-btn" onclick="deleteMaintenance(${m.id})">Delete</button></td>
