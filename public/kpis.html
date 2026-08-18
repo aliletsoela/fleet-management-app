@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Manager - KPIs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true">
+    <div class="blob amber"></div>
+    <div class="blob teal"></div>
+    <div class="blob coral"></div>
+  </div>
+  <header class="topbar">
+    <h1><span class="dot"></span>Fleet Manager</h1>
+    <nav>
+      <a class="tab" href="/index.html">Dashboard</a>
+      <a class="tab" href="/vehicles.html">Vehicles</a>
+      <a class="tab" href="/drivers.html">Drivers</a>
+      <a class="tab" href="/trips.html">Trips</a>
+      <a class="tab" href="/maintenance.html">Maintenance</a>
+      <a class="tab active" href="/kpis.html">KPIs</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Fleet KPIs <span id="live-indicator" class="live-indicator">● live</span></h2>
+    <p class="last-updated" id="last-updated"></p>
+
+    <!-- Utilization -->
+    <section class="kpi-section">
+      <h3>Utilization</h3>
+      <div class="kpi-row">
+        <div class="kpi-big-number">
+          <div class="kpi-value" id="utilization-rate">-</div>
+          <div class="kpi-caption">of fleet active right now</div>
+        </div>
+        <div class="kpi-donut-wrap">
+          <svg id="utilization-donut" viewBox="0 0 120 120" class="donut"></svg>
+          <div class="donut-legend" id="utilization-legend"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downtime -->
+    <section class="kpi-section">
+      <h3>Downtime</h3>
+      <div class="cards" id="downtime-cards"></div>
+      <p class="chart-caption">Maintenance cost by month (last 6 months)</p>
+      <div class="bar-chart" id="downtime-chart"></div>
+    </section>
+
+    <!-- Delivery performance -->
+    <section class="kpi-section">
+      <h3>Delivery Performance</h3>
+      <div class="cards" id="delivery-cards"></div>
+      <p class="chart-caption">Trips per driver</p>
+      <div class="bar-chart horizontal" id="driver-chart"></div>
+    </section>
+  </main>
+
+  <script src="/js/shared.js"></script>
+  <script src="/js/kpis.js"></script>
+</body>
+</html>
