@@ -165,6 +165,50 @@ h3 {
   letter-spacing: 0.06em;
 }
 
+/* ---------- KPI page ---------- */
+.kpi-section {
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.kpi-section h3 { margin-top: 0; }
+
+.kpi-row { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; }
+.kpi-big-number { min-width: 160px; }
+.kpi-big-number .kpi-value {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+}
+.kpi-big-number .kpi-caption { color: var(--muted); font-size: 0.85rem; margin-top: 0.4rem; }
+
+.kpi-donut-wrap { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.donut { width: 140px; height: 140px; }
+.donut-legend { display: flex; flex-direction: column; gap: 0.5rem; }
+.legend-item { font-size: 0.85rem; color: var(--text); display: flex; align-items: center; gap: 0.5rem; text-transform: capitalize; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.chart-caption { color: var(--muted); font-size: 0.85rem; margin: 1.2rem 0 0.6rem; }
+
+.bar-chart { display: flex; flex-direction: column; gap: 0.7rem; }
+.bar-chart.horizontal .bar-row { display: grid; grid-template-columns: 140px 1fr 60px; }
+.bar-row { display: grid; grid-template-columns: 90px 1fr 90px; align-items: center; gap: 0.7rem; }
+.bar-label { font-size: 0.82rem; color: var(--muted); font-family: var(--font-mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-track { background: rgba(148, 163, 184, 0.1); border-radius: 999px; height: 10px; overflow: hidden; }
+.bar-fill { background: linear-gradient(90deg, var(--teal), var(--amber)); height: 100%; border-radius: 999px; transition: width 0.4s ease; }
+.bar-value { font-size: 0.8rem; color: var(--text); font-family: var(--font-mono); text-align: right; }
+
+@media (max-width: 640px) {
+  .kpi-row { flex-direction: column; align-items: flex-start; }
+  .bar-row, .bar-chart.horizontal .bar-row { grid-template-columns: 70px 1fr 70px; }
+}
+
 /* ---------- Live indicator ---------- */
 .live-indicator {
   font-size: 0.7rem;
