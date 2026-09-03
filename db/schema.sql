@@ -62,6 +62,25 @@ CREATE TABLE IF NOT EXISTS fuel_logs (
   created_at     TIMESTAMP DEFAULT NOW()
 );
 
+
+CREATE TABLE IF NOT EXISTS users (
+  id             SERIAL PRIMARY KEY,
+  email          TEXT NOT NULL UNIQUE,
+  password_hash  TEXT NOT NULL,
+  full_name      TEXT NOT NULL,
+  role           TEXT NOT NULL DEFAULT 'staff'
+                   CHECK (role IN ('admin', 'staff')),
+  created_at     TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS "session" (
+  "sid" varchar NOT NULL COLLATE "default",
+  "sess" json NOT NULL,
+  "expire" timestamp(6) NOT NULL,
+  CONSTRAINT "session_pkey" PRIMARY KEY ("sid")
+);
+CREATE INDEX IF NOT EXISTS "IDX_session_expire" ON "session" ("expire");
+
 CREATE INDEX IF NOT EXISTS idx_maintenance_vehicle ON maintenance(vehicle_id);
 CREATE INDEX IF NOT EXISTS idx_trips_vehicle ON trips(vehicle_id);
 CREATE INDEX IF NOT EXISTS idx_trips_driver ON trips(driver_id);
