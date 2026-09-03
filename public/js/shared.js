@@ -9,11 +9,23 @@ async function api(path, options = {}) {
     headers: { "Content-Type": "application/json" },
     ...options,
   });
+  if (res.status === 401 && !path.startsWith("/auth/")) {
+    window.location.href = "/login.html";
+    return new Promise(() => {});
+  }
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: res.statusText }));
     throw new Error(err.error || "Request failed");
   }
   return res.json();
+}
+
+async function logout() {
+  try {
+    await api("/auth/logout", { method: "POST" });
+  } finally {
+    window.location.href = "/login.html";
+  }
 }
 
 function badge(status) {
